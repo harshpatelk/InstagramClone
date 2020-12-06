@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_margin="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Description..." />
-
-    <Button
-        android:id="@+id/btnCaptureImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take Picture"/>
-
     <ImageView
-        android:id="@+id/ivPostImage"
+        android:id="@+id/insta_txt"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        tools:srcCompat = "@tools:sample/avatars"/>
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@mipmap/instatext" />
 
-    <Button
-        android:id="@+id/btnSubmit"
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="580dp"
+        android:layout_above="@id/bottomNav"
+        android:layout_below="@+id/insta_txt"
+        android:layout_marginTop="0dp" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"/>
-
-
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_bottom_navigation" />
+</RelativeLayout>
